@@ -1,0 +1,23 @@
+#ifndef GRAPH_H
+#define GRAPH_H
+
+#include <vector>
+#include <list>
+#include <queue>
+#include <stack>
+#include <iostream>
+
+class Graph {
+public:
+    Graph(int vertices);
+    void addEdge(int v, int w);
+    void BFS(int startVertex);
+    void DFS(int startVertex);
+
+private:
+    int vertices;
+    std::vector<std::list<int>> adjList;
+    void DFSUtil(int v, std::vector<bool>& visited);
+};
+
+#endif // GRAPH_H
